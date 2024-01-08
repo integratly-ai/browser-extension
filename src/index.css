@@ -1,0 +1,58 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import 'src/styles/fonts.css';
+
+body {
+    font-family: 'Mont';
+    font-weight: 500;
+}
+
+
+
+@keyframes bouncing-loader {
+    to {
+        opacity: 0.2;
+        transform: translate3d(0, -6px, 0);
+    }
+}
+
+.bouncing-loader {
+    display: flex;
+    justify-content: center;
+}
+
+.bouncing-loader > div {
+    width: 6px;
+    height: 6px;
+    margin: 0.5rem 0.1rem;
+    animation: bouncing-loader 0.6s infinite alternate;
+    @apply bg-gradient-to-r from-[#FB1FFF] to-[#8247FF] rounded-full;
+}
+
+.bouncing-loader > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bouncing-loader > div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+
+.message-container p {
+    @apply my-2;
+}
+
+.message-container ul,
+.message-container ol {
+    @apply ml-4;
+}
+
+.message-container ul li {
+    @apply list-disc;
+}
+
+.message-container ol li {
+    @apply list-decimal;
+}

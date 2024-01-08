@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import 'src/styles/fonts.css';
+
+body {
+  font-family: 'Mont';
+  font-weight: 500;
+}
+
