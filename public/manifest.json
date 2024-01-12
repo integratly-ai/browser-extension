@@ -5,8 +5,14 @@
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "index.html",
-    "default_title": "My first extension"
+    "default_title": "AIAgent"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/assets/content-script.js"]
+    }
+  ],
   "background": {
     "scripts": ["/assets/background.js"],
     "persistent": false
@@ -16,12 +22,11 @@
     "48": "extension-logo.svg",
     "128": "extension-logo.svg"
   },
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "applications": {
     "gecko": {
       "id": "your-extension@example.com",
       "strict_min_version": "57.0"
     }
   },
-  "permissions": ["storage"]
+  "permissions": ["storage", "activeTab", "tabs"]
 }

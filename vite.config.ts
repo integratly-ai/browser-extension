@@ -29,7 +29,8 @@ export default defineConfig({
       },
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        background: path.resolve(__dirname, 'src/background.ts'), // Add this line
+        background: path.resolve(__dirname, 'src/background.ts'),
+        'content-script': path.resolve(__dirname, 'src/content-script.ts'),
       },
     },
   },
