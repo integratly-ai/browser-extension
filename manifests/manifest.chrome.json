@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "AIAgent"
+  },
+  "background": {
+    "service_worker": "/assets/background.js"
+  }
+}

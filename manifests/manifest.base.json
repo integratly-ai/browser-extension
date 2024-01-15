@@ -1,0 +1,17 @@
+{
+  "name": "AIAgent Assistance",
+  "description": "AIAgent Assistance",
+  "version": "1.0",
+  "icons": {
+    "16": "extension-logo.svg",
+    "48": "extension-logo.svg",
+    "128": "extension-logo.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/assets/content-script.js"]
+    }
+  ],
+  "permissions": ["storage", "activeTab", "tabs"]
+}

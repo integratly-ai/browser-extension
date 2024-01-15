@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "AIAgent"
+  },
+  "background": {
+    "scripts": ["/assets/background.js"],
+    "persistent": false
+  },
+  "applications": {
+    "gecko": {
+      "id": "your-extension@example.com",
+      "strict_min_version": "57.0"
+    }
+  }
+}
