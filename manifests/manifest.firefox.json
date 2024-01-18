@@ -10,7 +10,7 @@
   },
   "applications": {
     "gecko": {
-      "id": "your-extension@example.com",
+      "id": "admin@aigentx.xyz",
       "strict_min_version": "57.0"
     }
   }
