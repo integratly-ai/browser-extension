@@ -4,8 +4,29 @@ import TurndownService from 'turndown';
   chrome.runtime.onMessage.addListener((message) => {
     if (message.type === 'startParse') {
       const htmlContent = document.documentElement.innerHTML;
-      const scriptRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
-      const pureHtml = htmlContent.replace(scriptRegex, '');
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlContent, 'text/html');
+
+      // Remove undesired tags
+      const tagsToRemove = ['style', 'svg', 'script'];
+      tagsToRemove.forEach((tag) => {
+        const elements = doc.getElementsByTagName(tag);
+        while (elements[0]) {
+          if (!elements[0].parentNode) continue;
+
+          elements[0].parentNode.removeChild(elements[0]);
+        }
+      });
+
+      // Replace <a> tags with their text content
+      const anchorElements = Array.from(document.getElementsByTagName('a'));
+      anchorElements.forEach((element) => {
+        if (!element.textContent) return;
+        element.replaceWith(element.textContent);
+      });
+
+      // Get the cleaned HTML
+      const pureHtml = doc.body.innerHTML;
       const currentUrl = window.location.href;
       const turndownService = new TurndownService();
       const markdown = turndownService.turndown(pureHtml);
