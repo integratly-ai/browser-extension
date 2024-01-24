@@ -8,7 +8,7 @@ import TurndownService from 'turndown';
       const doc = parser.parseFromString(htmlContent, 'text/html');
 
       // Remove undesired tags
-      const tagsToRemove = ['style', 'svg', 'script'];
+      const tagsToRemove = ['style', 'svg', 'img', 'script'];
       tagsToRemove.forEach((tag) => {
         const elements = doc.getElementsByTagName(tag);
         while (elements[0]) {
