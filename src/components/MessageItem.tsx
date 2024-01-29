@@ -38,7 +38,7 @@ export const MessageItem: FC<{ message: Message }> = ({ message }) => {
       {isAI && <ChatAILogo />}
       <div
         className={`bg-white bg-opacity-10 px-2 rounded-xl ${
-          isAI ? 'mr-auto rounded-tl-none ml-4' : 'ml-auto mr-4 rounded-br-none'
+          isAI ? 'mr-auto rounded-tl-none ml-4' : 'ml-auto mr-2 rounded-br-none'
         }`}
         dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
       ></div>
