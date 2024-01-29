@@ -82,7 +82,7 @@ export const ChatHistory = () => {
   };
 
   return (
-    <div className="flex-1 p-6 overflow-auto" ref={container}>
+    <div className="flex-1 p-2 overflow-auto" ref={container}>
       <ChatIntro />
       {history.map((message) => (
         <MessageItem key={message.msg_id} message={message} />

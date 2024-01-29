@@ -31,7 +31,7 @@ export const MessageItem: FC<{ message: Message }> = ({ message }) => {
 
   return (
     <div
-      className={`message-container items-start flex w-10/12 mb-3 ${
+      className={`message-container items-start flex w-11/12 mb-2 ${
         isAI ? 'justify-start mr-auto' : 'justify-end flex-row-reverse ml-auto'
       }`}
     >

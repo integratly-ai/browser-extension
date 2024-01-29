@@ -55,7 +55,7 @@ function App() {
   };
 
   return (
-    <div className="h-[600px] w-[30rem] bg-gray-800 text-white flex flex-col">
+    <div className="h-[600px] w-[25rem] bg-gray-800 text-white flex flex-col">
       <Header />
       <ChatHistory />
       <Footer />
