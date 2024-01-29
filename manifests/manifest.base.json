@@ -13,5 +13,5 @@
       "js": ["/assets/content-script.js"]
     }
   ],
-  "permissions": ["storage", "activeTab", "tabs"]
+  "permissions": ["storage", "activeTab"]
 }
