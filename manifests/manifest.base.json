@@ -1,7 +1,7 @@
 {
   "name": "AIAgent Assistance",
   "description": "AIAgent Assistance",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "icons": {
     "16": "extension-logo.svg",
     "48": "extension-logo.svg",
