@@ -1,11 +1,11 @@
 {
   "name": "AIAgent Assistance",
   "description": "AIAgent Assistance",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "icons": {
-    "16": "extension-logo.svg",
-    "48": "extension-logo.svg",
-    "128": "extension-logo.svg"
+    "16": "extension-logo.png",
+    "48": "extension-logo.png",
+    "128": "extension-logo.png"
   },
   "content_scripts": [
     {
