@@ -1,7 +1,7 @@
 {
   "name": "AIAgent Assistance",
   "description": "AIAgent Assistance",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "icons": {
     "16": "extension-logo.png",
     "48": "extension-logo.png",
@@ -13,5 +13,5 @@
       "js": ["/assets/content-script.js"]
     }
   ],
-  "permissions": ["storage", "activeTab"]
+  "permissions": ["storage", "activeTab", "scripting"]
 }

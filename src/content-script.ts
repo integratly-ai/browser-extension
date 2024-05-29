@@ -3,7 +3,8 @@ import TurndownService from 'turndown';
 (() => {
   chrome.runtime.onMessage.addListener((message) => {
     if (message.type === 'startParse') {
-      const htmlContent = document.documentElement.innerHTML;
+      console.log('startParse fired');
+      const htmlContent = document.documentElement.outerHTML; // Get the full HTML
       const parser = new DOMParser();
       const doc = parser.parseFromString(htmlContent, 'text/html');
 
@@ -12,17 +13,15 @@ import TurndownService from 'turndown';
       tagsToRemove.forEach((tag) => {
         const elements = doc.getElementsByTagName(tag);
         while (elements[0]) {
-          if (!elements[0].parentNode) continue;
-
-          elements[0].parentNode.removeChild(elements[0]);
+          elements[0].parentNode?.removeChild(elements[0]);
         }
       });
 
       // Replace <a> tags with their text content
-      const anchorElements = Array.from(document.getElementsByTagName('a'));
+      const anchorElements = Array.from(doc.getElementsByTagName('a'));
       anchorElements.forEach((element) => {
-        if (!element.textContent) return;
-        element.replaceWith(element.textContent);
+        const textNode = doc.createTextNode(element?.textContent || '');
+        element.parentNode?.replaceChild(textNode, element);
       });
 
       // Get the cleaned HTML

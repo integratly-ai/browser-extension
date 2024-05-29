@@ -66,6 +66,7 @@ function App() {
       if (tabs.length === 0) return; // No active tab found
 
       // Send a message to the content script in the active tab
+      console.log('trying to send message for startParse');
       chrome.tabs.sendMessage(tabs[0].id as number, { type: 'startParse' });
     });
   };
